@@ -95,10 +95,9 @@ body {
 
 .date:nth-child(7n) {
   color: blue;
-
 }
 
-.today {
+#today {
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -115,3 +114,4 @@ a:link {
 a:hover {
   color : black;
 }
+

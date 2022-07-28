@@ -1,22 +1,28 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import "./date.module.css";
+import { useParams, useNavigate } from 'react-router-dom';
+import style from "./date.module.css";
 
 
 const Date = () => {
 
-    const { dateId } = useParams(); // const 변수명 = useParams().파라미터명;
+    const { id } = useParams(); // const 변수명 = useParams().파라미터명;
+    // console.log(id)
     const navigate = useNavigate();
 
     return (
-        <div>
-            <div className='memo'>
-            {dateId}일 페이지
-            <input type="textarea" placeholder='내용 입력' className="textarea"></input>
+        <>
+            <div className="container">
+            <div className={style.header}>
+            {id}일 페이지
             </div>
-            <button onClick={() => navigate(-1)}>달력으로 돌아가기</button>
-        </div>
+                <textarea  placeholder='내용 입력' className={style.textarea}></textarea>
+                {/* <input type="textarea" autofocus="true" placeholder='내용 입력' className={style.textarea}></input> */}
+                <div className={style.button}>
+                <button className={style.prev} onClick={() => navigate(-1)}>이전</button>
+                <input type="submit" value="전송"></input>
+                </div>
+            </div>
+        </>
     )
 }
 
