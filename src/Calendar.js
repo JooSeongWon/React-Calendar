@@ -4,12 +4,12 @@ import style from "./calendar.css";
 import { Link } from 'react-router-dom';
 
 
-  //classnames 모듈 사용
-  //클래스를 boolean 값에 따라 할당 여부를 결정 할 수 있음
+  // //classnames 모듈 사용
+  // //클래스를 boolean 값에 따라 할당 여부를 결정 할 수 있음
   const cn = classNames.bind(style); //calendar.css와 연결 (style).weekday
 
   
-  //Date 객체 생성
+  // //Date 객체 생성
   let date = new Date();
   
   const Calendar = () => {
@@ -75,7 +75,8 @@ import { Link } from 'react-router-dom';
   
   //오늘 날짜
   let todayDate;
-  
+
+
   //날짜
   const returnDate = () => {
     
@@ -92,8 +93,8 @@ import { Link } from 'react-router-dom';
       } else if(selectedYear === today.year && selectedMonth === today.month && today.date < 15) {
       todayDate = (i === todayDateIndex2) ? 'today' : `${i}`;
       }
-      dates[i] =`<div class="date"> <span class="${condition}" id="${todayDate}">${date}</span></div>`;
-  })        
+        dates[i] =`<div class="date" id="${todayDate}"> <span class="${condition}" >${date}</span></div>`;
+  })       
 
   return dates;
   };
@@ -160,9 +161,9 @@ import { Link } from 'react-router-dom';
           </div>
         </div>
         <div className="week">{returnWeek()}</div>
-        <Link to={`/date/${date.id}`}>
+        {/* <Link to={`/date/${dates.id}`}> */}
           <div className="dates" dangerouslySetInnerHTML={{__html: returnDate().join('')}}></div>
-        </Link>
+        {/* </Link> */}
       </div>
     </>
   );

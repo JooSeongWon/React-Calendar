@@ -98,9 +98,8 @@ body {
 }
 
 #today {
-  background-color: red;
-  color: white;
-  border-radius: 50%;
+  background-color: lightcyan;
+  color: black;
 }
 
 .other {
